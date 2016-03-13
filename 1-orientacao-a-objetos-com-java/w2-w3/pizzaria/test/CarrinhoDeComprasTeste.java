@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 public class CarrinhoDeComprasTeste {
 
     @Test(expected=IllegalArgumentException.class)
-    public void testAdicionaPizzaSemIngrediente() throws Exception {
+    public void testeAdicionaPizzaSemIngrediente() throws Exception {
         Pizza vento = new Pizza();
         CarrinhoDeCompras carrinho = new CarrinhoDeCompras();
 
@@ -12,7 +12,7 @@ public class CarrinhoDeComprasTeste {
     }
 
     @Test
-    public void testPrecoTotal() throws Exception {
+    public void testePrecoTotal() throws Exception {
         Pizza misto = new Pizza();
         misto.adicionaIngredientes("queijo", "presunto");
 
