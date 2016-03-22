@@ -1,0 +1,1 @@
+Olá! Bem-vindo à semana 4 do curso Orientação a Objetos com Java! Nesta semana você aprofundará seu contato com Herança e Modificadores de Acesso. Ao final desta semana, você será capaz de 1) projetar e estruturar programas Java com base em boas práticas no uso de herança, 2) além de garantir acoplamento baixo entre classes pelo uso adequado de modificadores de acesso
