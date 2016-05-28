@@ -23,41 +23,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConversorTeste.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/teste/ConversorTeste.java">
+      <file leaf-file-name="Conversor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Conversor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.4220183">
-              <caret line="90" column="56" selection-start-line="90" selection-start-column="56" selection-end-line="90" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2302#2303#0" expanded="true" />
-                <element signature="e#2361#2362#0" expanded="true" />
-                <element signature="e#2457#2458#0" expanded="true" />
-                <element signature="e#2518#2519#0" expanded="true" />
+                <element signature="e#1160#1161#0" expanded="true" />
+                <element signature="e#1216#1217#0" expanded="true" />
+                <element signature="e#1270#1271#0" expanded="true" />
+                <element signature="e#1328#1329#0" expanded="true" />
+                <element signature="e#1371#1372#0" expanded="true" />
+                <element signature="e#1404#1405#0" expanded="true" />
+                <element signature="e#1598#1599#0" expanded="true" />
+                <element signature="e#1632#1633#0" expanded="true" />
+                <element signature="e#1726#1727#0" expanded="true" />
+                <element signature="e#2160#2161#0" expanded="true" />
+                <element signature="e#2209#2210#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Conversor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Conversor.java">
+      <file leaf-file-name="ConversorTeste.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/teste/ConversorTeste.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="77" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.2760736">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1205#1206#0" expanded="true" />
-                <element signature="e#1262#1263#0" expanded="true" />
-                <element signature="e#1315#1316#0" expanded="true" />
-                <element signature="e#1373#1374#0" expanded="true" />
-                <element signature="e#1426#1427#0" expanded="true" />
-                <element signature="e#1460#1461#0" expanded="true" />
-                <element signature="e#1502#1503#0" expanded="true" />
-                <element signature="e#1535#1536#0" expanded="true" />
-                <element signature="e#1587#1588#0" expanded="true" />
-                <element signature="e#1628#1629#0" expanded="true" />
-                <element signature="e#2410#2411#0" expanded="true" />
-                <element signature="e#2465#2466#0" expanded="true" />
+                <element signature="e#209#210#0" expanded="true" />
+                <element signature="e#252#253#0" expanded="true" />
+                <element signature="e#2302#2303#0" expanded="true" />
+                <element signature="e#2361#2362#0" expanded="true" />
+                <element signature="e#2457#2458#0" expanded="true" />
+                <element signature="e#2518#2519#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,8 +86,10 @@
         <option value="$PROJECT_DIR$/teste/SeparadorPorTipo.java" />
         <option value="$PROJECT_DIR$/teste/SeparadorPorTipoTeste.java" />
         <option value="$PROJECT_DIR$/src/SeparadorPorTipo.java" />
-        <option value="$PROJECT_DIR$/src/Conversor.java" />
+        <option value="$PROJECT_DIR$/src/ConversorFinal.java" />
         <option value="$PROJECT_DIR$/teste/ConversorTeste.java" />
+        <option value="$PROJECT_DIR$/src/Conversor.java" />
+        <option value="$PROJECT_DIR$/teste/ConversorFinalTeste.java" />
       </list>
     </option>
   </component>
@@ -192,7 +195,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConversorTeste.possuiCaractereEspecial">
+  <component name="RunManager" selected="JUnit.All in camel-case">
     <configuration default="false" name="All in camel-case" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="camel-case" />
@@ -202,27 +205,6 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="SeparadorPorTipoTeste.umaPalavraMinuscula" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="camel-case" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SeparadorPorTipoTeste" />
-      <option name="METHOD_NAME" value="umaPalavraMinuscula" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -277,14 +259,35 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="ConversorTeste.possuiCaractereEspecial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ConversorTeste.siglaNoMeio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="camel-case" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ConversorTeste" />
-      <option name="METHOD_NAME" value="possuiCaractereEspecial" />
+      <option name="METHOD_NAME" value="siglaNoMeio" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ConversorTeste.umaPalavraTodaMinuscula" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="camel-case" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ConversorTeste" />
+      <option name="METHOD_NAME" value="umaPalavraTodaMinuscula" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -676,18 +679,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All in camel-case" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SeparadorPorTipoTeste.umaPalavraMinuscula" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ConversorTeste" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ConversorTeste.comDigitoNoMeio" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ConversorTeste.possuiCaractereEspecial" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ConversorTeste" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ConversorTeste.comDigitoNoMeio" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ConversorTeste.siglaNoMeio" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ConversorTeste.umaPalavraTodaMinuscula" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ConversorTeste.possuiCaractereEspecial" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.All in camel-case" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ConversorTeste.comDigitoNoMeio" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ConversorTeste" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SeparadorPorTipoTeste.umaPalavraMinuscula" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.All in camel-case" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ConversorTeste.umaPalavraTodaMinuscula" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ConversorTeste" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ConversorTeste.comDigitoNoMeio" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ConversorTeste.siglaNoMeio" />
       </list>
     </recent_temporary>
   </component>
@@ -702,48 +705,48 @@
       <option name="number" value="Default" />
       <updated>1464296343502</updated>
       <workItem from="1464296347584" duration="18068000" />
-      <workItem from="1464458178822" duration="6479000" />
+      <workItem from="1464458178822" duration="14839000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_camel-case - 2016.05.28 at 17h 22m 17s.xml">
+    <history-entry file="All_in_camel-case - 2016.05.28 at 19h 33m 23s.xml">
       <configuration name="All in camel-case" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_camel-case - 2016.05.28 at 17h 23m 15s.xml">
+    <history-entry file="All_in_camel-case - 2016.05.28 at 19h 33m 56s.xml">
       <configuration name="All in camel-case" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_camel-case - 2016.05.28 at 17h 24m 38s.xml">
+    <history-entry file="All_in_camel-case - 2016.05.28 at 19h 35m 36s.xml">
       <configuration name="All in camel-case" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_camel-case - 2016.05.28 at 17h 27m 29s.xml">
+    <history-entry file="All_in_camel-case - 2016.05.28 at 19h 46m 04s.xml">
       <configuration name="All in camel-case" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_camel-case - 2016.05.28 at 17h 27m 51s.xml">
+    <history-entry file="All_in_camel-case - 2016.05.28 at 19h 47m 32s.xml">
       <configuration name="All in camel-case" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_camel-case - 2016.05.28 at 17h 27m 55s.xml">
+    <history-entry file="All_in_camel-case - 2016.05.28 at 19h 47m 49s.xml">
       <configuration name="All in camel-case" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConversorTeste_possuiCaractereEspecial - 2016.05.28 at 17h 28m 34s.xml">
-      <configuration name="ConversorTeste.possuiCaractereEspecial" configurationId="JUnit" />
+    <history-entry file="All_in_camel-case - 2016.05.28 at 19h 55m 47s.xml">
+      <configuration name="All in camel-case" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConversorTeste_possuiCaractereEspecial - 2016.05.28 at 17h 28m 37s.xml">
-      <configuration name="ConversorTeste.possuiCaractereEspecial" configurationId="JUnit" />
+    <history-entry file="ConversorTeste_umaPalavraTodaMinuscula - 2016.05.28 at 19h 34m 25s.xml">
+      <configuration name="ConversorTeste.umaPalavraTodaMinuscula" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConversorTeste_possuiCaractereEspecial - 2016.05.28 at 17h 31m 39s.xml">
-      <configuration name="ConversorTeste.possuiCaractereEspecial" configurationId="JUnit" />
+    <history-entry file="ConversorTeste_umaPalavraTodaMinuscula - 2016.05.28 at 19h 35m 26s.xml">
+      <configuration name="ConversorTeste.umaPalavraTodaMinuscula" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConversorTeste_possuiCaractereEspecial - 2016.05.28 at 17h 33m 11s.xml">
-      <configuration name="ConversorTeste.possuiCaractereEspecial" configurationId="JUnit" />
+    <history-entry file="ConversorTeste_umaPalavraTodaMinuscula - 2016.05.28 at 19h 35m 29s.xml">
+      <configuration name="ConversorTeste.umaPalavraTodaMinuscula" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24547000" />
+    <option name="totallyTimeSpent" value="32907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="30" width="1922" height="1051" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32745314" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -751,7 +754,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3693495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43109152" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14909478" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -804,7 +807,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Conversor.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -813,20 +824,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/teste/ConversorTeste.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2302#2303#0" expanded="true" />
-            <element signature="e#2361#2362#0" expanded="true" />
-            <element signature="e#2457#2458#0" expanded="true" />
-            <element signature="e#2518#2519#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -856,6 +853,7 @@
         <state split_layout="FIRST">
           <first_editor vertical-scroll-proportion="0.3087167">
             <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -958,31 +956,32 @@
     <entry file="file://$PROJECT_DIR$/src/Conversor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="77" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="77" />
+          <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1205#1206#0" expanded="true" />
-            <element signature="e#1262#1263#0" expanded="true" />
-            <element signature="e#1315#1316#0" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
-            <element signature="e#1426#1427#0" expanded="true" />
-            <element signature="e#1460#1461#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1535#1536#0" expanded="true" />
-            <element signature="e#1587#1588#0" expanded="true" />
-            <element signature="e#1628#1629#0" expanded="true" />
-            <element signature="e#2410#2411#0" expanded="true" />
-            <element signature="e#2465#2466#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1216#1217#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+            <element signature="e#1328#1329#0" expanded="true" />
+            <element signature="e#1371#1372#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1598#1599#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1726#1727#0" expanded="true" />
+            <element signature="e#2160#2161#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teste/ConversorTeste.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4220183">
-          <caret line="90" column="56" selection-start-line="90" selection-start-column="56" selection-end-line="90" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.2760736">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
             <element signature="e#2302#2303#0" expanded="true" />
             <element signature="e#2361#2362#0" expanded="true" />
             <element signature="e#2457#2458#0" expanded="true" />
