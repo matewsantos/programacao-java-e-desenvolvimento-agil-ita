@@ -705,14 +705,11 @@
       <option name="number" value="Default" />
       <updated>1464296343502</updated>
       <workItem from="1464296347584" duration="18068000" />
-      <workItem from="1464458178822" duration="14839000" />
+      <workItem from="1464458178822" duration="14924000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_camel-case - 2016.05.28 at 19h 33m 23s.xml">
-      <configuration name="All in camel-case" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_camel-case - 2016.05.28 at 19h 33m 56s.xml">
       <configuration name="All in camel-case" configurationId="JUnit" />
     </history-entry>
@@ -731,6 +728,9 @@
     <history-entry file="All_in_camel-case - 2016.05.28 at 19h 55m 47s.xml">
       <configuration name="All in camel-case" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_camel-case - 2016.05.28 at 19h 57m 11s.xml">
+      <configuration name="All in camel-case" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="ConversorTeste_umaPalavraTodaMinuscula - 2016.05.28 at 19h 34m 25s.xml">
       <configuration name="ConversorTeste.umaPalavraTodaMinuscula" configurationId="JUnit" />
     </history-entry>
@@ -742,7 +742,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32907000" />
+    <option name="totallyTimeSpent" value="32992000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="30" width="1922" height="1051" extended-state="6" />
