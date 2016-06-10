@@ -1,5 +1,5 @@
 public interface Hardware {
-    String pegarNumeroDaContaCartao();
-    void entregarDinheiro();
-    void lerEnvelope();
+    String pegarNumeroDaContaCartao() throws ProblemaHardwareException;
+    void entregarDinheiro() throws ProblemaHardwareException;
+    void lerEnvelope() throws ProblemaHardwareException;
 }

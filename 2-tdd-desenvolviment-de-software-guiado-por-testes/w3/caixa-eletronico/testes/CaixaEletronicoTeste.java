@@ -18,28 +18,36 @@ public class CaixaEletronicoTeste {
     }
 
     @Test
-    public void loginComSucesso() throws ContaInexistenteException, SenhaErradaException {
+    public void loginComSucesso() throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(new ContaCorrente("1", "senhasecreta", new BigDecimal("0")));
 
         assertEquals("Usuário Autenticado", caixa.login("senhasecreta"));
     }
 
     @Test(expected = ContaInexistenteException.class)
-    public void loginComErroContaCorrenteNaoEncontrada() throws ContaInexistenteException, SenhaErradaException {
+    public void loginComErroContaCorrenteNaoEncontrada() throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
         servicoRemotoMock.quandoChamarRecupaContaRetornar(null);
 
         caixa.login("senhasecreta");
     }
 
     @Test(expected = SenhaErradaException.class)
-    public void loginComErroSenhaIncorreta() throws ContaInexistenteException, SenhaErradaException {
+    public void loginComErroSenhaIncorreta() throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(new ContaCorrente("1", "senhasecreta", new BigDecimal("0")));
 
         caixa.login("senhaerrada");
     }
 
+    @Test(expected = SenhaErradaException.class)
+    public void loginComErroProblemaHardware() throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
+        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(new ContaCorrente("1", "senhasecreta", new BigDecimal("0")));
+        hardwareMock.lancarExceptionQuandoChamar("pegarNumeroCartao");
+
+        caixa.login("senhaerrada");
+    }
+
     @Test
-    public void saldoComSucesso() throws ContaInexistenteException, SenhaErradaException, UsuarioNaoLogadoException {
+    public void saldoComSucesso() throws ContaInexistenteException, SenhaErradaException, UsuarioNaoLogadoException, ProblemaHardwareException {
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00")));
         caixa.login("senhasecreta");
 

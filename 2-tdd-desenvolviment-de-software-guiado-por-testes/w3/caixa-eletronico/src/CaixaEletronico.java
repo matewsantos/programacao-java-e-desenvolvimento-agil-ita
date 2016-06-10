@@ -13,7 +13,7 @@ public class CaixaEletronico {
         this.servicoRemoto = servicoRemoto;
     }
 
-    public String login(String senha) throws ContaInexistenteException, SenhaErradaException {
+    public String login(String senha) throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
         String numeroConta = hardware.pegarNumeroDaContaCartao();
         this.contaCorrente = servicoRemoto.recuperaConta(numeroConta);
         if (contaCorrente == null) {
