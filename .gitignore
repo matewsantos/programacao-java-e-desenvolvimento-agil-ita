@@ -1,2 +1,8 @@
 **/.idea/**
 **/out/**/*.class
+
+*.classpath
+*.project
+*.eml
+*.userlibraries
+
