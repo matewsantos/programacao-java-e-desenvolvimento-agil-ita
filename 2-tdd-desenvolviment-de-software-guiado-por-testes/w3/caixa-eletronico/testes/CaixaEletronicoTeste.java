@@ -10,14 +10,18 @@ import static org.junit.Assert.assertTrue;
 public class CaixaEletronicoTeste {
     private CaixaEletronico caixa;
     private ServicoRemotoMock servicoRemotoMock;
+    private HardwareMock hardwareMock;
     private ContaCorrente contaCorrente;
 
     @Before
     public void setUp() {
+        String numeroConta = "1";
+        hardwareMock = new HardwareMock();
         servicoRemotoMock = new ServicoRemotoMock();
-        caixa = new CaixaEletronico(new HardwareMock(), servicoRemotoMock);
-        contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
-        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
+        caixa = new CaixaEletronico(hardwareMock, servicoRemotoMock);
+        contaCorrente = new ContaCorrente(numeroConta, "senhasecreta", new BigDecimal("100.00"));
+        hardwareMock.quandoPegarNumeroDaContaRetornar(numeroConta);
+        servicoRemotoMock.quandoChamarRecupaContaCom(numeroConta).retornar(contaCorrente);
     }
 
     @Test

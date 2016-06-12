@@ -4,7 +4,11 @@ import java.util.Set;
 public class HardwareMock implements Hardware {
 
     private String numeroDaContaRetorno;
-    private Set<String> metodosQueLancamException = new HashSet<>();
+    private Set<String> metodosQueLancamException;
+
+    public HardwareMock() {
+        metodosQueLancamException  = new HashSet<>();
+    }
 
     @Override
     public String pegarNumeroDaContaCartao() throws ProblemaHardwareException {
@@ -12,7 +16,7 @@ public class HardwareMock implements Hardware {
             throw new ProblemaHardwareException();
         }
 
-        return "1";
+        return numeroDaContaRetorno;
     }
 
     @Override
