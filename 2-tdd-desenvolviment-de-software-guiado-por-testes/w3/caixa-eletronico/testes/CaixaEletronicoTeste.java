@@ -20,7 +20,7 @@ public class CaixaEletronicoTeste {
     }
 
     @Test
-    public void logarComSucesso() throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
+    public void logarComSucesso() throws ContaInexistenteException, SenhaIncorretaException, ProblemaHardwareException {
         ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("0"));
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
 
@@ -29,24 +29,24 @@ public class CaixaEletronicoTeste {
 
     @Test(expected = ContaInexistenteException.class)
     public void logarComErroContaCorrenteNaoEncontrada()
-            throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
+            throws ContaInexistenteException, SenhaIncorretaException, ProblemaHardwareException {
         servicoRemotoMock.quandoChamarRecupaContaRetornar(null);
 
         caixa.logar("senhasecreta");
     }
 
-    @Test(expected = SenhaErradaException.class)
+    @Test(expected = SenhaIncorretaException.class)
     public void logarComErroSenhaIncorreta()
-            throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
+            throws ContaInexistenteException, SenhaIncorretaException, ProblemaHardwareException {
         ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("0"));
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
 
         caixa.logar("senhaerrada");
     }
 
-    @Test(expected = SenhaErradaException.class)
+    @Test(expected = SenhaIncorretaException.class)
     public void logarComErroProblemaHardware()
-            throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
+            throws ContaInexistenteException, SenhaIncorretaException, ProblemaHardwareException {
         ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("0"));
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
         hardwareMock.lancarExceptionQuandoChamar("pegarNumeroCartao");
@@ -56,7 +56,7 @@ public class CaixaEletronicoTeste {
 
     @Test
     public void saldoComSucesso()
-            throws ContaInexistenteException, SenhaErradaException, UsuarioNaoLogadoException, ProblemaHardwareException {
+            throws ContaInexistenteException, SenhaIncorretaException, UsuarioNaoLogadoException, ProblemaHardwareException {
         ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
         caixa.logar("senhasecreta");
@@ -65,7 +65,7 @@ public class CaixaEletronicoTeste {
     }
 
     @Test(expected = UsuarioNaoLogadoException.class)
-    public void saldoDeslogado() throws ContaInexistenteException, SenhaErradaException, UsuarioNaoLogadoException {
+    public void saldoDeslogado() throws ContaInexistenteException, SenhaIncorretaException, UsuarioNaoLogadoException {
         ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
 
@@ -73,7 +73,7 @@ public class CaixaEletronicoTeste {
     }
 
     @Test
-    public void sacarComSucesso() throws SenhaErradaException, ContaInexistenteException, ProblemaHardwareException,
+    public void sacarComSucesso() throws SenhaIncorretaException, ContaInexistenteException, ProblemaHardwareException,
             UsuarioNaoLogadoException {
         ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
@@ -86,7 +86,7 @@ public class CaixaEletronicoTeste {
     }
 
     @Test
-    public void sacarMaisDoQuePode() throws SenhaErradaException, ContaInexistenteException, ProblemaHardwareException,
+    public void sacarMaisDoQuePode() throws SenhaIncorretaException, ContaInexistenteException, ProblemaHardwareException,
             UsuarioNaoLogadoException {
         ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
@@ -108,7 +108,7 @@ public class CaixaEletronicoTeste {
     }
 
     @Test(expected = ProblemaHardwareException.class)
-    public void sacarComProbleaDeHardware() throws SenhaErradaException, ContaInexistenteException,
+    public void sacarComProbleaDeHardware() throws SenhaIncorretaException, ContaInexistenteException,
             ProblemaHardwareException, UsuarioNaoLogadoException {
         ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
@@ -119,7 +119,7 @@ public class CaixaEletronicoTeste {
     }
 
     @Test
-    public void depositarComSucesso() throws SenhaErradaException, ContaInexistenteException, ProblemaHardwareException,
+    public void depositarComSucesso() throws SenhaIncorretaException, ContaInexistenteException, ProblemaHardwareException,
             UsuarioNaoLogadoException {
         ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
@@ -132,7 +132,7 @@ public class CaixaEletronicoTeste {
     }
 
     @Test(expected = ProblemaHardwareException.class)
-    public void depositarComProblemaNoHardware() throws SenhaErradaException, ContaInexistenteException,
+    public void depositarComProblemaNoHardware() throws SenhaIncorretaException, ContaInexistenteException,
             ProblemaHardwareException, UsuarioNaoLogadoException {
         ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
         servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);

@@ -14,15 +14,15 @@ public class CaixaEletronico {
         this.servicoRemoto = servicoRemoto;
     }
 
-    public String logar(String senha) throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
+    public String logar(String senha) throws ContaInexistenteException, SenhaIncorretaException, ProblemaHardwareException {
         String numeroConta = hardware.pegarNumeroDaContaCartao();
         this.contaCorrente = servicoRemoto.recuperaConta(numeroConta);
         if (contaCorrente == null) {
-            throw new ContaInexistenteException("Não foi encontrada conta com numero " + numeroConta);
+            throw new ContaInexistenteException(numeroConta);
         }
 
         if (!contaCorrente.senhaConfere(senha)) {
-            throw new SenhaErradaException("Senha incorreta");
+            throw new SenhaIncorretaException();
         }
 
         return "Usuário Autenticado";
