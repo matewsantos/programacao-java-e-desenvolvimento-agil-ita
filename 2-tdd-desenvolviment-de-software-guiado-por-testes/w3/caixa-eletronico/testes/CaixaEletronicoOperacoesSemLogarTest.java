@@ -3,8 +3,6 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-import static org.junit.Assert.assertFalse;
-
 public class CaixaEletronicoOperacoesSemLogarTest {
     private CaixaEletronico caixa;
     private ServicoRemotoMock servicoRemotoMock;
@@ -24,13 +22,13 @@ public class CaixaEletronicoOperacoesSemLogarTest {
     public void sacarSemLogar() throws UsuarioNaoLogadoException, ProblemaHardwareException {
         caixa.sacar(new BigDecimal("10.00"));
 
-        assertFalse(servicoRemotoMock.chamouMetodoPersistirConta());
+        servicoRemotoMock.naoChamouPersistirConta();
     }
 
     @Test(expected = UsuarioNaoLogadoException.class)
     public void depositarSemLogar() throws UsuarioNaoLogadoException, ProblemaHardwareException {
         caixa.depositar(new BigDecimal("10.00"));
 
-        assertFalse(servicoRemotoMock.chamouMetodoPersistirConta());
+        servicoRemotoMock.naoChamouPersistirConta();
     }
 }

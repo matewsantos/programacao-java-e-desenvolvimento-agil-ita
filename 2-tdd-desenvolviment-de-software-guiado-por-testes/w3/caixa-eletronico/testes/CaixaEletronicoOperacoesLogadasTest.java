@@ -4,8 +4,6 @@ import org.junit.Test;
 import java.math.BigDecimal;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 public class CaixaEletronicoOperacoesLogadasTest {
     private CaixaEletronico caixa;
@@ -36,7 +34,7 @@ public class CaixaEletronicoOperacoesLogadasTest {
 
         assertEquals("Retire seu dinheiro", resultado);
         assertEquals(new BigDecimal("90.00"), contaCorrente.saldo());
-        assertTrue(servicoRemotoMock.chamouMetodoPersistirConta());
+        servicoRemotoMock.chamouPersistirContaCom(contaCorrente);
     }
 
     @Test
@@ -45,7 +43,7 @@ public class CaixaEletronicoOperacoesLogadasTest {
 
         assertEquals("Saldo Insuficiente", resultado);
         assertEquals(new BigDecimal("100.00"), contaCorrente.saldo());
-        assertFalse(servicoRemotoMock.chamouMetodoPersistirConta());
+        servicoRemotoMock.naoChamouPersistirConta();
     }
 
     @Test(expected = ProblemaHardwareException.class)
@@ -61,7 +59,7 @@ public class CaixaEletronicoOperacoesLogadasTest {
 
         assertEquals("Depósito recebido com sucesso", resultado);
         assertEquals(new BigDecimal("110.00"), contaCorrente.saldo());
-        assertTrue(servicoRemotoMock.chamouMetodoPersistirConta());
+        servicoRemotoMock.chamouPersistirContaCom(contaCorrente);
     }
 
     @Test(expected = ProblemaHardwareException.class)
