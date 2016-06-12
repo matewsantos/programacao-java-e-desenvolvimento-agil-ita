@@ -3,14 +3,14 @@ import static org.junit.Assert.assertNull;
 
 public class ServicoRemotoMock implements ServicoRemoto {
     private String numeroContaCorrente;
-    private ContaCorrente contaCorrente;
+    private ContaCorrente contaCorrenteRetornada;
     private ContaCorrente contaCorrentePersistida;
     private boolean chamouMetodoPersistirConta;
 
     @Override
     public ContaCorrente recuperaConta(String numeroContaCorrente) {
         if (this.numeroContaCorrente == numeroContaCorrente) {
-            return contaCorrente;
+            return contaCorrenteRetornada;
         }
 
         return null;
@@ -27,12 +27,12 @@ public class ServicoRemotoMock implements ServicoRemoto {
     }
 
     public ServicoRemotoMock quandoChamarRecupaContaRetornar(ContaCorrente contaCorrente) {
-        this.contaCorrente = contaCorrente;
+        this.contaCorrenteRetornada = contaCorrente;
         return this;
     }
 
     public ServicoRemotoMock retornar(ContaCorrente contaCorrente) {
-        this.contaCorrente = contaCorrente;
+        this.contaCorrenteRetornada = contaCorrente;
         return this;
     }
 
