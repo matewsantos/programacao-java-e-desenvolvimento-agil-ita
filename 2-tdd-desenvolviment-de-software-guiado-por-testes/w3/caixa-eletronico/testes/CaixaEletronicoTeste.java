@@ -9,21 +9,19 @@ import static org.junit.Assert.assertTrue;
 
 public class CaixaEletronicoTeste {
     private CaixaEletronico caixa;
-    private HardwareMock hardwareMock;
     private ServicoRemotoMock servicoRemotoMock;
+    private ContaCorrente contaCorrente;
 
     @Before
     public void setUp() {
-        hardwareMock = new HardwareMock();
         servicoRemotoMock = new ServicoRemotoMock();
-        caixa = new CaixaEletronico(hardwareMock, servicoRemotoMock);
+        caixa = new CaixaEletronico(new HardwareMock(), servicoRemotoMock);
+        contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
+        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
     }
 
     @Test
     public void logarComSucesso() throws ContaInexistenteException, SenhaIncorretaException, ProblemaHardwareException {
-        ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("0"));
-        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
-
         assertEquals("Usuário Autenticado", caixa.logar("senhasecreta"));
     }
 
@@ -38,35 +36,20 @@ public class CaixaEletronicoTeste {
     @Test(expected = SenhaIncorretaException.class)
     public void logarComErroSenhaIncorreta()
             throws ContaInexistenteException, SenhaIncorretaException, ProblemaHardwareException {
-        ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("0"));
-        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
-
         caixa.logar("senhaerrada");
     }
 
     @Test
     public void saldoComSucesso()
             throws ContaInexistenteException, SenhaIncorretaException, UsuarioNaoLogadoException, ProblemaHardwareException {
-        ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
-        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
         caixa.logar("senhasecreta");
 
         assertEquals("O saldo é R$ 100,00", caixa.saldo());
     }
 
-    @Test(expected = UsuarioNaoLogadoException.class)
-    public void saldoDeslogado() throws ContaInexistenteException, SenhaIncorretaException, UsuarioNaoLogadoException {
-        ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
-        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
-
-        caixa.saldo();
-    }
-
     @Test
     public void sacarComSucesso() throws SenhaIncorretaException, ContaInexistenteException, ProblemaHardwareException,
             UsuarioNaoLogadoException {
-        ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
-        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
         caixa.logar("senhasecreta");
 
         String resultado = caixa.sacar(new BigDecimal("10.00"));
@@ -78,8 +61,6 @@ public class CaixaEletronicoTeste {
     @Test
     public void sacarMaisDoQuePode() throws SenhaIncorretaException, ContaInexistenteException, ProblemaHardwareException,
             UsuarioNaoLogadoException {
-        ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
-        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
         caixa.logar("senhasecreta");
 
         String resultado = caixa.sacar(new BigDecimal("100.01"));
@@ -88,34 +69,14 @@ public class CaixaEletronicoTeste {
         assertFalse(servicoRemotoMock.chamouMetodoPersistirConta());
     }
 
-    @Test(expected = UsuarioNaoLogadoException.class)
-    public void sacarSemLogar() throws UsuarioNaoLogadoException, ProblemaHardwareException {
-        ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
-        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
-
-        String resultado = caixa.sacar(new BigDecimal("100.01"));
-        assertFalse(servicoRemotoMock.chamouMetodoPersistirConta());
-    }
-
     @Test
     public void depositarComSucesso() throws SenhaIncorretaException, ContaInexistenteException, ProblemaHardwareException,
             UsuarioNaoLogadoException {
-        ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
-        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
         caixa.logar("senhasecreta");
 
         String resultado = caixa.depositar(new BigDecimal("10.00"));
         assertEquals("Depósito recebido com sucesso", resultado);
         assertEquals(new BigDecimal("110.00"), contaCorrente.saldo());
         assertTrue(servicoRemotoMock.chamouMetodoPersistirConta());
-    }
-
-    @Test(expected = UsuarioNaoLogadoException.class)
-    public void depositarSemLogar() throws UsuarioNaoLogadoException, ProblemaHardwareException {
-        ContaCorrente contaCorrente = new ContaCorrente("1", "senhasecreta", new BigDecimal("100.00"));
-        servicoRemotoMock.quandoChamarRecupaContaCom("1").retornar(contaCorrente);
-
-        caixa.depositar(new BigDecimal("10.00"));
-        assertFalse(servicoRemotoMock.chamouMetodoPersistirConta());
     }
 }
