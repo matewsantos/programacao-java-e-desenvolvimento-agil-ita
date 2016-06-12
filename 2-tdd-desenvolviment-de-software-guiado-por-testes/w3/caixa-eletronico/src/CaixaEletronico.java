@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -13,7 +14,7 @@ public class CaixaEletronico {
         this.servicoRemoto = servicoRemoto;
     }
 
-    public String login(String senha) throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
+    public String logar(String senha) throws ContaInexistenteException, SenhaErradaException, ProblemaHardwareException {
         String numeroConta = hardware.pegarNumeroDaContaCartao();
         this.contaCorrente = servicoRemoto.recuperaConta(numeroConta);
         if (contaCorrente == null) {
@@ -28,10 +29,36 @@ public class CaixaEletronico {
     }
 
     public String saldo() throws UsuarioNaoLogadoException {
-        if (contaCorrente == null) {
-            throw new UsuarioNaoLogadoException("saldo");
-        }
+        validarLogin("saldo");
 
         return "O saldo é " + formatador.format(contaCorrente.saldo());
+    }
+
+    public String sacar(BigDecimal valorASacar) throws UsuarioNaoLogadoException, ProblemaHardwareException {
+        validarLogin("sacar");
+
+        if (!contaCorrente.sacar(valorASacar)) {
+            return "Saldo Insuficiente";
+        }
+
+        servicoRemoto.persistirConta(contaCorrente);
+        hardware.entregarDinheiro();
+        return "Retire seu dinheiro";
+    }
+
+    public String depositar(BigDecimal valorADepositar) throws UsuarioNaoLogadoException, ProblemaHardwareException {
+        validarLogin("depositar");
+
+        hardware.lerEnvelope();
+        contaCorrente.depositar(valorADepositar);
+        servicoRemoto.persistirConta(contaCorrente);
+
+        return "Depósito recebido com sucesso";
+    }
+
+    private void validarLogin(String acao) throws UsuarioNaoLogadoException {
+        if (contaCorrente == null) {
+            throw new UsuarioNaoLogadoException(acao);
+        }
     }
 }

@@ -18,4 +18,17 @@ public class ContaCorrente {
     public BigDecimal saldo() {
         return saldo;
     }
+
+    public boolean sacar(BigDecimal valorASacar) {
+        if (saldo().compareTo(valorASacar) < 0) {
+            return false;
+        }
+
+        this.saldo = this.saldo.subtract(valorASacar);
+        return true;
+    }
+
+    public void depositar(BigDecimal valorADepositar) {
+        this.saldo = this.saldo.add(valorADepositar);
+    }
 }

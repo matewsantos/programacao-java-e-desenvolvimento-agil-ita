@@ -1,6 +1,7 @@
 public class ServicoRemotoMock implements ServicoRemoto {
     private String numeroContaCorrente;
     private ContaCorrente conta;
+    private boolean chamouMetodoPersistirConta;
 
     @Override
     public ContaCorrente recuperaConta(String numeroContaCorrente) {
@@ -12,8 +13,8 @@ public class ServicoRemotoMock implements ServicoRemoto {
     }
 
     @Override
-    public void persistirConta() {
-
+    public void persistirConta(ContaCorrente contaCorrente) {
+        this.chamouMetodoPersistirConta = true;
     }
 
     public ServicoRemotoMock quandoChamarRecupaContaCom(String numeroContaCorrente) {
@@ -29,5 +30,9 @@ public class ServicoRemotoMock implements ServicoRemoto {
     public ServicoRemotoMock retornar(ContaCorrente conta) {
         this.conta = conta;
         return this;
+    }
+
+    public boolean chamouMetodoPersistirConta() {
+        return this.chamouMetodoPersistirConta;
     }
 }
