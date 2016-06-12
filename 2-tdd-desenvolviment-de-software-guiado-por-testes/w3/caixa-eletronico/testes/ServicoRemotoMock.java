@@ -14,7 +14,9 @@ public class ServicoRemotoMock implements ServicoRemoto {
 
     @Override
     public void persistirConta(ContaCorrente contaCorrente) {
-        this.chamouMetodoPersistirConta = true;
+        if(this.conta == contaCorrente) {
+            this.chamouMetodoPersistirConta = true;
+        }
     }
 
     public ServicoRemotoMock quandoChamarRecupaContaCom(String numeroContaCorrente) {

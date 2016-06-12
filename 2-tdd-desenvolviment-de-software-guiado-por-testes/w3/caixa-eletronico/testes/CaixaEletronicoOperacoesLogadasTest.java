@@ -26,14 +26,12 @@ public class CaixaEletronicoOperacoesLogadasTest {
     }
 
     @Test
-    public void saldoComSucesso()
-            throws ContaInexistenteException, SenhaIncorretaException, UsuarioNaoLogadoException, ProblemaHardwareException {
+    public void saldoComSucesso() throws UsuarioNaoLogadoException {
         assertEquals("O saldo é R$ 100,00", caixa.saldo());
     }
 
     @Test
-    public void sacarComSucesso() throws SenhaIncorretaException, ContaInexistenteException, ProblemaHardwareException,
-            UsuarioNaoLogadoException {
+    public void sacarComSucesso() throws  ProblemaHardwareException, UsuarioNaoLogadoException {
         String resultado = caixa.sacar(new BigDecimal("10.00"));
 
         assertEquals("Retire seu dinheiro", resultado);
@@ -42,8 +40,7 @@ public class CaixaEletronicoOperacoesLogadasTest {
     }
 
     @Test
-    public void sacarMaisDoQuePode() throws SenhaIncorretaException, ContaInexistenteException, ProblemaHardwareException,
-            UsuarioNaoLogadoException {
+    public void sacarMaisDoQuePode() throws ProblemaHardwareException, UsuarioNaoLogadoException {
         String resultado = caixa.sacar(new BigDecimal("100.01"));
 
         assertEquals("Saldo Insuficiente", resultado);
@@ -52,16 +49,14 @@ public class CaixaEletronicoOperacoesLogadasTest {
     }
 
     @Test(expected = ProblemaHardwareException.class)
-    public void sacarComProblemaDeHardware() throws SenhaIncorretaException, ContaInexistenteException,
-            ProblemaHardwareException, UsuarioNaoLogadoException {
+    public void sacarComProblemaDeHardware() throws ProblemaHardwareException, UsuarioNaoLogadoException {
         hardwareMock.lancarExceptionQuandoChamar("entregarDinheiro");
 
         caixa.sacar(new BigDecimal("10.00"));
     }
 
     @Test
-    public void depositarComSucesso() throws SenhaIncorretaException, ContaInexistenteException, ProblemaHardwareException,
-            UsuarioNaoLogadoException {
+    public void depositarComSucesso() throws ProblemaHardwareException, UsuarioNaoLogadoException {
         String resultado = caixa.depositar(new BigDecimal("10.00"));
 
         assertEquals("Depósito recebido com sucesso", resultado);
@@ -70,8 +65,7 @@ public class CaixaEletronicoOperacoesLogadasTest {
     }
 
     @Test(expected = ProblemaHardwareException.class)
-    public void depositarComProblemaNoHardware() throws SenhaIncorretaException, ContaInexistenteException,
-            ProblemaHardwareException, UsuarioNaoLogadoException {
+    public void depositarComProblemaNoHardware() throws ProblemaHardwareException, UsuarioNaoLogadoException {
         hardwareMock.lancarExceptionQuandoChamar("lerEnvelope");
 
         caixa.depositar(new BigDecimal("10.00"));
