@@ -43,6 +43,14 @@ public class CaixaEletronicoTeste {
         caixa.logar("senhaerrada");
     }
 
+    @Test(expected = ProblemaHardwareException.class)
+    public void logarComErroProblemaHardware()
+            throws ContaInexistenteException, SenhaIncorretaException, ProblemaHardwareException {
+        hardwareMock.lancarExceptionQuandoChamar("pegarNumeroDaContaCartao");
+
+        caixa.logar("senhasecreta");
+    }
+
     @Test
     public void saldoComSucesso()
             throws ContaInexistenteException, SenhaIncorretaException, UsuarioNaoLogadoException, ProblemaHardwareException {
@@ -73,6 +81,16 @@ public class CaixaEletronicoTeste {
         assertFalse(servicoRemotoMock.chamouMetodoPersistirConta());
     }
 
+    @Test(expected = ProblemaHardwareException.class)
+    public void sacarComProblemaDeHardware() throws SenhaIncorretaException, ContaInexistenteException,
+            ProblemaHardwareException, UsuarioNaoLogadoException {
+        hardwareMock.lancarExceptionQuandoChamar("entregarDinheiro");
+
+        caixa.logar("senhasecreta");
+
+        caixa.sacar(new BigDecimal("10.00"));
+    }
+
     @Test
     public void depositarComSucesso() throws SenhaIncorretaException, ContaInexistenteException, ProblemaHardwareException,
             UsuarioNaoLogadoException {
@@ -82,5 +100,15 @@ public class CaixaEletronicoTeste {
         assertEquals("Depósito recebido com sucesso", resultado);
         assertEquals(new BigDecimal("110.00"), contaCorrente.saldo());
         assertTrue(servicoRemotoMock.chamouMetodoPersistirConta());
+    }
+
+    @Test(expected = ProblemaHardwareException.class)
+    public void depositarComProblemaNoHardware() throws SenhaIncorretaException, ContaInexistenteException,
+            ProblemaHardwareException, UsuarioNaoLogadoException {
+        hardwareMock.lancarExceptionQuandoChamar("lerEnvelope");
+
+        caixa.logar("senhasecreta");
+
+        caixa.depositar(new BigDecimal("10.00"));
     }
 }
