@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class Armazenamento {
+public class Armazenamento implements ArmazenadorPontuacao {
     private Map<String, Map<String, Integer>> usuarios;
 
     public Armazenamento() {
@@ -30,6 +30,10 @@ public class Armazenamento {
         return usuarios.keySet();
     }
 
+    public Set<String> pontosPorUsuario(String nomeUsuario) {
+        return getUsuario(nomeUsuario).keySet();
+    }
+
     private Map<String, Integer> getUsuario(String nomeUsuario) {
         Map<String, Integer> usuario = usuarios.get(nomeUsuario);
         if (usuario == null) {
@@ -38,9 +42,5 @@ public class Armazenamento {
         }
 
         return usuario;
-    }
-
-    public Set<String> pontosPorUsuario(String nomeUsuario) {
-        return getUsuario(nomeUsuario).keySet();
     }
 }
