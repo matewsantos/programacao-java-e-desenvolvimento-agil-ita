@@ -3,7 +3,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.io.RandomAccessFile;
 import java.util.List;
 import java.util.Set;
 
@@ -12,18 +11,20 @@ import static org.junit.Assert.assertTrue;
 
 public class PlacarArmazenamentoIntegracao {
     private final String FILE_NAME = "usuariosTeste";
+
+    private UsuarioRepositorio usuarioRepositorio;
     private Placar placar;
 
     @Before
     public void setup() {
-        Armazenamento armazenamento = new Armazenamento(FILE_NAME);
+        usuarioRepositorio = new UsuarioRepositorio(FILE_NAME);
+        Armazenamento armazenamento = new Armazenamento(usuarioRepositorio);
         placar = new Placar(armazenamento);
     }
 
     @After
-    public void limpaArquivo() throws IOException {
-        RandomAccessFile arquivo = new RandomAccessFile(FILE_NAME, "rw");
-        arquivo.setLength(0);
+    public void limparArquivo() throws IOException {
+        usuarioRepositorio.limparRepositorio();
     }
 
     @Test
