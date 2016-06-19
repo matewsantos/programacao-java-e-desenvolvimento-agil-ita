@@ -1,10 +1,13 @@
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
-public class Usuario {
+public class Usuario implements Serializable {
+    private static final long serialVersionUID = -4004695228169636141L;
+
     private String nome;
     private Map<String, Ponto> pontos;
 

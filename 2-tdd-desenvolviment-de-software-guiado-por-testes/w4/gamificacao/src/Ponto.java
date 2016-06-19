@@ -1,4 +1,8 @@
-public class Ponto {
+import java.io.Serializable;
+
+public class Ponto implements Serializable {
+    private static final long serialVersionUID = -7213733517682362315L;
+
     private String tipo;
     private int quantidade;
 

@@ -1,6 +1,9 @@
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.List;
 import java.util.Set;
 
@@ -8,12 +11,19 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class PlacarArmazenamentoIntegracao {
+    private final String FILE_NAME = "usuariosTeste";
     private Placar placar;
 
     @Before
     public void setup() {
-        Armazenamento armazenamento = new Armazenamento();
+        Armazenamento armazenamento = new Armazenamento(FILE_NAME);
         placar = new Placar(armazenamento);
+    }
+
+    @After
+    public void limpaArquivo() throws IOException {
+        RandomAccessFile arquivo = new RandomAccessFile(FILE_NAME, "rw");
+        arquivo.setLength(0);
     }
 
     @Test

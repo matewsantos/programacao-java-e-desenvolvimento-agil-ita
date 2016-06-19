@@ -1,17 +1,27 @@
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class ArmazenamentoTeste {
+    private final String FILE_NAME = "usuariosTeste";
     private Armazenamento armazenamento;
 
     @Before
     public void setup() {
-        armazenamento = new Armazenamento();
+        armazenamento = new Armazenamento(FILE_NAME);
+    }
+
+    @After
+    public void limpaArquivo() throws IOException {
+        RandomAccessFile arquivo = new RandomAccessFile(FILE_NAME, "rw");
+        arquivo.setLength(0);
     }
 
     @Test
