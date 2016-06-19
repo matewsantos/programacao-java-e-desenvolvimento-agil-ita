@@ -1,9 +1,17 @@
 import java.util.Set;
 
-public class ArmazenamentoMock implements ArmazenadorPontuacao  {
-    @Override
-    public void armazenarPontuacao(String nomeUsuario, String tipoPontuacao, int pontuacao) {
+import static org.junit.Assert.assertEquals;
 
+public class ArmazenamentoMock implements ArmazenadorPontuacao  {
+    private String nomeUsuarioArmazenado;
+    private String tipoPontuacaoArmazenada;
+    private int quantidadePontuacaoArmazenada;
+
+    @Override
+    public void armazenarPontuacao(String nomeUsuario, String tipoPontuacao, int quantidadePontuacao) {
+        this.nomeUsuarioArmazenado = nomeUsuario;
+        this.tipoPontuacaoArmazenada = tipoPontuacao;
+        this.quantidadePontuacaoArmazenada = quantidadePontuacao;
     }
 
     @Override
@@ -12,12 +20,18 @@ public class ArmazenamentoMock implements ArmazenadorPontuacao  {
     }
 
     @Override
-    public Set<String> usuariosPontuadores() {
+    public Set<Usuario> usuariosPontuadores() {
         return null;
     }
 
     @Override
-    public Set<String> pontosPorUsuario(String nomeUsuario) {
+    public Set<Ponto> pontosPorUsuario(String nomeUsuario) {
         return null;
+    }
+
+    public void armazenouPontuacaoCom(String nomeUsuario, String tipoPontuacao, int quantidadePontuacao) {
+        assertEquals(nomeUsuario, nomeUsuarioArmazenado);
+        assertEquals(tipoPontuacao, tipoPontuacaoArmazenada);
+        assertEquals(quantidadePontuacao, quantidadePontuacaoArmazenada);
     }
 }

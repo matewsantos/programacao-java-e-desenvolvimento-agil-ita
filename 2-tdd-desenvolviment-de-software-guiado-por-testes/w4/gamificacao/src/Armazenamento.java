@@ -1,45 +1,41 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Armazenamento implements ArmazenadorPontuacao {
-    private Map<String, Map<String, Integer>> usuarios;
+    private Map<String, Usuario> usuarios;
 
     public Armazenamento() {
         usuarios = new HashMap<>();
     }
 
-    public void armazenarPontuacao(String nomeUsuario, String tipoPontuacao, int pontuacao) {
-        if (pontuacao <= 0) {
-            return;
-        }
-
-        Map<String, Integer> usuario = getUsuario(nomeUsuario);
-
-        usuario.put(tipoPontuacao, pontuacao);
+    public void armazenarPontuacao(String nomeUsuario, String tipoPonto, int quantidade) {
+        Usuario usuario = buscaOuCriaUsuario(nomeUsuario);
+        usuario.adicionaPontos(tipoPonto, quantidade);
     }
 
     public int pontosPorUsuarioETipo(String nomeUsuario, String tipoPontuacao) {
-        Map<String, Integer> usuario = getUsuario(nomeUsuario);
+        Usuario usuario = buscaOuCriaUsuario(nomeUsuario);
 
-        return usuario.get(tipoPontuacao);
+        return usuario.quantidadePontosPorTipo(tipoPontuacao);
     }
 
-
-    public Set<String> usuariosPontuadores() {
-        return usuarios.keySet();
+    public Set<Usuario> usuariosPontuadores() {
+        return usuarios.values().stream()
+                .filter(usuario -> usuario.temPontos())
+                .collect(Collectors.toSet());
     }
 
-    public Set<String> pontosPorUsuario(String nomeUsuario) {
-        return getUsuario(nomeUsuario).keySet();
+    public Set<Ponto> pontosPorUsuario(String nomeUsuario) {
+        Usuario usuario = buscaOuCriaUsuario(nomeUsuario);
+
+        return usuario.getPontos();
     }
 
-    private Map<String, Integer> getUsuario(String nomeUsuario) {
-        Map<String, Integer> usuario = usuarios.get(nomeUsuario);
-        if (usuario == null) {
-            usuario = new HashMap<String, Integer>();
-            usuarios.put(nomeUsuario, usuario);
-        }
+    private Usuario buscaOuCriaUsuario(String nomeUsuario) {
+        Usuario usuario = usuarios.getOrDefault(nomeUsuario, new Usuario(nomeUsuario));
+        usuarios.put(nomeUsuario, usuario);
 
         return usuario;
     }

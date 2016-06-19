@@ -1,11 +1,10 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ArmazenamentoTeste {
     private Armazenamento armazenamento;
@@ -19,6 +18,7 @@ public class ArmazenamentoTeste {
     public void recuperarPontosPorUsuarioETipo() {
         armazenamento.armazenarPontuacao("mario", "estrela", 10);
         armazenamento.armazenarPontuacao("mario", "moeda", 1);
+        armazenamento.armazenarPontuacao("luigi", "estrela", 20);
 
         int resultado = armazenamento.pontosPorUsuarioETipo("mario", "estrela");
 
@@ -32,9 +32,11 @@ public class ArmazenamentoTeste {
         armazenamento.armazenarPontuacao("luigi", "moeda", 1);
         armazenamento.armazenarPontuacao("yoshi", "moeda", 0);
 
-        Set<String> resultado = armazenamento.usuariosPontuadores();
+        Set<Usuario> resultado = armazenamento.usuariosPontuadores();
 
-        assertEquals(set("mario", "luigi"), resultado);
+        assertEquals(2, resultado.size());
+        assertTrue(resultado.stream().anyMatch(usuario -> usuario.getNome().equals("mario")));
+        assertTrue(resultado.stream().anyMatch(usuario -> usuario.getNome().equals("luigi")));
     }
 
     @Test
@@ -42,12 +44,10 @@ public class ArmazenamentoTeste {
         armazenamento.armazenarPontuacao("mario", "estrela", 10);
         armazenamento.armazenarPontuacao("mario", "moeda", 1);
 
-        Set<String> resultado = armazenamento.pontosPorUsuario("mario");
+        Set<Ponto> resultado = armazenamento.pontosPorUsuario("mario");
 
-        assertEquals(set("moeda", "estrela"), resultado);
-    }
-
-    public Set<String> set(String ... elements) {
-        return new HashSet<>(Arrays.asList(elements));
+        assertEquals(2, resultado.size());
+        assertTrue(resultado.stream().anyMatch(ponto -> ponto.getTipo().equals("estrela")));
+        assertTrue(resultado.stream().anyMatch(ponto-> ponto.getTipo().equals("moeda")));
     }
 }
