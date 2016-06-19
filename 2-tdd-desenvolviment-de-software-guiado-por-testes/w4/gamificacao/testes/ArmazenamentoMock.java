@@ -7,6 +7,9 @@ public class ArmazenamentoMock implements ArmazenadorPontuacao  {
     private String tipoPontuacaoArmazenada;
     private int quantidadePontuacaoArmazenada;
 
+    private String argumentoPontosPorUsuario;
+    private Set<Ponto> retornoPontosPorUsuario;
+
     @Override
     public void armazenarPontuacao(String nomeUsuario, String tipoPontuacao, int quantidadePontuacao) {
         this.nomeUsuarioArmazenado = nomeUsuario;
@@ -26,6 +29,10 @@ public class ArmazenamentoMock implements ArmazenadorPontuacao  {
 
     @Override
     public Set<Ponto> pontosPorUsuario(String nomeUsuario) {
+        if (nomeUsuario.equals(argumentoPontosPorUsuario)) {
+            return retornoPontosPorUsuario;
+        }
+
         return null;
     }
 
@@ -33,5 +40,15 @@ public class ArmazenamentoMock implements ArmazenadorPontuacao  {
         assertEquals(nomeUsuario, nomeUsuarioArmazenado);
         assertEquals(tipoPontuacao, tipoPontuacaoArmazenada);
         assertEquals(quantidadePontuacao, quantidadePontuacaoArmazenada);
+    }
+
+    public ArmazenamentoMock quandoChamarPontosPorUsuarioCom(String nomeUsuario) {
+        this.argumentoPontosPorUsuario = nomeUsuario;
+
+        return this;
+    }
+
+    public void retornar(Set<Ponto> pontos) {
+        this.retornoPontosPorUsuario = pontos;
     }
 }

@@ -38,7 +38,7 @@ public class Usuario {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Usuario usuario = (Usuario) o;
-        
+
         return Objects.equals(nome, usuario.nome);
     }
 
