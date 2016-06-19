@@ -11,14 +11,11 @@ public class Armazenamento implements ArmazenadorPontuacao {
     }
 
     public void armazenarPontuacao(String nomeUsuario, String tipoPonto, int quantidade) {
-        Usuario usuario = buscaOuCriaUsuario(nomeUsuario);
-        usuario.adicionaPontos(tipoPonto, quantidade);
+        buscaOuCriaUsuario(nomeUsuario).adicionaPontos(tipoPonto, quantidade);
     }
 
     public int pontosPorUsuarioETipo(String nomeUsuario, String tipoPontuacao) {
-        Usuario usuario = buscaOuCriaUsuario(nomeUsuario);
-
-        return usuario.quantidadePontosPorTipo(tipoPontuacao);
+        return buscaOuCriaUsuario(nomeUsuario).quantidadePontosPorTipo(tipoPontuacao);
     }
 
     public Set<Usuario> usuariosPontuadores() {
