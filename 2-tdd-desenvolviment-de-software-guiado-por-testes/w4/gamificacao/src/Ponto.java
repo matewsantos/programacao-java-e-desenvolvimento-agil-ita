@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Ponto {
     private String tipo;
     private int quantidade;
@@ -7,6 +5,11 @@ public class Ponto {
     public Ponto(String tipo) {
         this.tipo = tipo;
         this.quantidade = 0;
+    }
+
+    public Ponto(String tipo, int quantidade) {
+        this.tipo = tipo;
+        this.quantidade = quantidade;
     }
 
     public int getQuantidade() {
@@ -19,18 +22,5 @@ public class Ponto {
 
     public void adicionaPontos(int quantidade) {
         this.quantidade += quantidade;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Ponto ponto = (Ponto) o;
-        return Objects.equals(tipo, ponto.tipo);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(tipo);
     }
 }
