@@ -28,9 +28,8 @@ public class Armazenamento implements ArmazenadorPontuacao {
     }
 
     public Set<Ponto> pontosPorUsuario(String nomeUsuario) {
-        Usuario usuario = buscaOuCriaUsuario(nomeUsuario);
-
-        return usuario.getPontos();
+        return buscaOuCriaUsuario(nomeUsuario).getPontos().stream()
+                .collect(Collectors.toSet());
     }
 
     private Usuario buscaOuCriaUsuario(String nomeUsuario) {

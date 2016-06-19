@@ -21,7 +21,7 @@ public class PlacarTeste {
     public void pontosPorUsuario() {
         ArmazenamentoMock armazenamentoMock = new ArmazenamentoMock();
         Placar placar = new Placar(armazenamentoMock);
-        Set<Ponto> pontosDoMario = new HashSet<>(Arrays.asList(new Ponto("estrela")));
+        Set<Ponto> pontosDoMario = new HashSet<>(Arrays.asList(new Ponto("estrela", 1)));
         armazenamentoMock.quandoChamarPontosPorUsuarioCom("mario").retornar(pontosDoMario);
 
         Set<Ponto> resultado = placar.pontosPorUsuario("mario");
