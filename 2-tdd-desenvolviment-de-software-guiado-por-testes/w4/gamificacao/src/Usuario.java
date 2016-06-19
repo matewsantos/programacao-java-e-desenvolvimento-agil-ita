@@ -1,9 +1,8 @@
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
-import java.util.Objects;
 
 public class Usuario implements Serializable {
     private static final long serialVersionUID = -4004695228169636141L;
@@ -34,20 +33,6 @@ public class Usuario implements Serializable {
 
     public Set<Ponto> getPontos() {
         return new HashSet<>(pontos.values());
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Usuario usuario = (Usuario) o;
-
-        return Objects.equals(nome, usuario.nome);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nome);
     }
 
     private int totalPontos() {
