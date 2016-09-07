@@ -6,3 +6,9 @@
 *.eml
 *.userlibraries
 
+**/nbproject/**
+**/build/**
+build.xml
+MANIFEST.mf
+manifest.mf
+MANIFEST.MF
