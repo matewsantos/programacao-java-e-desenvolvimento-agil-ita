@@ -29,5 +29,3 @@ C = ((F - 32) * 5) / 9
 A seguinte fórmula pode ser utilizada para a conversão de Fahrenheit (F) para Celsius (C) :
 
 F= ((C * 9) / 5) + 32
-
-

@@ -38,7 +38,6 @@ public class PaginaConversaoTemperatura {
     assertEquals("212.0", driver.findElement(By.cssSelector("h1")).getText());
   }
 
-
   @After
   public void tearDown() throws Exception {
     driver.quit();
