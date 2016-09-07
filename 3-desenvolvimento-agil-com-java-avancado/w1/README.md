@@ -1,0 +1,2 @@
+Olá, bem-vindo ao Curso 3 – Desenvolvimento Ágil com Java Avançado. Neste módulo você será introduzido ao maravilhoso mundo das aplicações Web com Java, criando páginas dinâmicas com servlets e conduzindo testes de aplicações Web por meio da ferramenta Selenium. Você será exposto também aos tipos genéricos do Java, entendendo os conceitos subjacentes e fazendo uso deles para prover tanto segurança de tipo em tempo de compilação, quanto para reduzir código redundante em exemplo prático.
+
