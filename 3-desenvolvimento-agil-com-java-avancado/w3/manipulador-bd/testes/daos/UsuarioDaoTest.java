@@ -23,7 +23,7 @@ public class UsuarioDaoTest {
     public void database() throws Exception {
         jdt = new JdbcDatabaseTester("org.postgresql.Driver", "jdbc:postgresql://localhost/coursera", "postgres", "admin");
         loader = new FlatXmlDataFileLoader();
-        IDataSet dataSet = loader.load("/usuarios-inicio.xml");
+        IDataSet dataSet = loader.load("/database-images/usuarios-inicio.xml");
         jdt.setDataSet(dataSet);
         jdt.onSetup();
         dao = new UsuarioDao();
@@ -55,7 +55,7 @@ public class UsuarioDaoTest {
         dao.inserir(new Usuario("pedro", "pedro@gmail.com", "Pedro Silva", "pedro123", 10));
 
         ITable tabelaCorrente = jdt.getConnection().createDataSet().getTable("usuario");
-        ITable tabelaEsperada = loader.load("/usuarios-apos-insercao.xml").getTable("usuario");
+        ITable tabelaEsperada = loader.load("/database-images/usuarios-apos-insercao.xml").getTable("usuario");
 
         Assertion.assertEquals(tabelaEsperada, tabelaCorrente);
     }
@@ -65,7 +65,7 @@ public class UsuarioDaoTest {
         dao.adicionarPontos("maria", 5);
 
         ITable tabelaCorrente = jdt.getConnection().createDataSet().getTable("usuario");
-        ITable tabelaEsperada= loader.load("/usuarios-apos-adicao-de-pontos.xml").getTable("usuario");
+        ITable tabelaEsperada= loader.load("/database-images/usuarios-apos-adicao-de-pontos.xml").getTable("usuario");
 
         Assertion.assertEquals(tabelaCorrente, tabelaEsperada);
     }
