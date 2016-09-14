@@ -87,8 +87,7 @@ public class UsuarioDao implements IUsuarioDao {
         } catch (SQLException e) {
             throw  new RuntimeException("Não foi possível executar o acesso ao banco de dados", e);
         }
-
-
+        
         return resultado;
     }
 
