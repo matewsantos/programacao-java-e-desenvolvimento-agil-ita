@@ -1,7 +1,7 @@
 package dominio.entidades;
 
-import dominio.daos.ComentarioDao;
-import dominio.daos.IComentarioDao;
+import daos.ComentarioDao;
+import daos.IComentarioDao;
 
 import java.util.List;
 

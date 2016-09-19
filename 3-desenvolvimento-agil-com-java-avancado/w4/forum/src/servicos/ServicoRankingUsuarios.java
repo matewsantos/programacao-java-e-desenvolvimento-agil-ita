@@ -1,7 +1,7 @@
 package servicos;
 
-import dominio.daos.IUsuarioDao;
-import dominio.daos.UsuarioDao;
+import daos.IUsuarioDao;
+import daos.UsuarioDao;
 import dominio.entidades.Usuario;
 
 import java.util.List;

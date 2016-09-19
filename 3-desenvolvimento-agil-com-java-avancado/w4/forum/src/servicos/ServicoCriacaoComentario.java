@@ -1,9 +1,9 @@
 package servicos;
 
-import dominio.daos.ComentarioDao;
-import dominio.daos.IComentarioDao;
-import dominio.daos.IUsuarioDao;
-import dominio.daos.UsuarioDao;
+import daos.ComentarioDao;
+import daos.IComentarioDao;
+import daos.IUsuarioDao;
+import daos.UsuarioDao;
 import dominio.entidades.Comentario;
 
 public class ServicoCriacaoComentario {

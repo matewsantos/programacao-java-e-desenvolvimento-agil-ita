@@ -1,7 +1,7 @@
 package servicos;
 
-import dominio.daos.ITopicoDao;
-import dominio.daos.TopicoDao;
+import daos.ITopicoDao;
+import daos.TopicoDao;
 import dominio.entidades.Topico;
 
 public class ServicoExibicaoTopico {

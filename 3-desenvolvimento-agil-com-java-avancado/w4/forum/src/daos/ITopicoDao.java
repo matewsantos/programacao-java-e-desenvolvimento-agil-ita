@@ -1,4 +1,4 @@
-package dominio.daos;
+package daos;
 
 import dominio.entidades.Topico;
 
