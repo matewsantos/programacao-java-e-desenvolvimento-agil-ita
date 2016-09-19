@@ -1,9 +1,9 @@
 package servicos;
 
-import dominio.daos.ITopicoDao;
-import dominio.daos.IUsuarioDao;
-import dominio.daos.TopicoDao;
-import dominio.daos.UsuarioDao;
+import daos.ITopicoDao;
+import daos.IUsuarioDao;
+import daos.TopicoDao;
+import daos.UsuarioDao;
 import dominio.entidades.Usuario;
 
 public class ServicoLogin {
