@@ -14,9 +14,10 @@
 
     <c:if test="${erro != null}">
       <p>${erro}</p>
-      <p>
-        Para se cadastrar, clique <a href="cadastro.jsp">aqui</a>
-      </p>
     </c:if>
+
+    <p>
+      Para se cadastrar, clique <a href="cadastro.jsp">aqui</a>
+    </p>
   </body>
 </html>

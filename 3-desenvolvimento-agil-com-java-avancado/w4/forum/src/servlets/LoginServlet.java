@@ -12,8 +12,6 @@ import java.io.IOException;
 
 @WebServlet("/logar")
 public class LoginServlet extends HttpServlet {
-    private String PAGINA_INSUCESSO = "index.jsp";
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
@@ -25,7 +23,7 @@ public class LoginServlet extends HttpServlet {
             resp.sendRedirect("/listagemTopicos");
         } else {
             req.setAttribute("erro", "login e/ou senha inválido(s)");
-            req.getRequestDispatcher(PAGINA_INSUCESSO).forward(req, resp);
+            req.getRequestDispatcher("index.jsp").forward(req, resp);
         }
     }
 }
