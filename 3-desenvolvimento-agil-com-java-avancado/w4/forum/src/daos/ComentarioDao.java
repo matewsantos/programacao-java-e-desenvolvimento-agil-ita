@@ -53,6 +53,7 @@ public class ComentarioDao implements IComentarioDao {
     private Comentario constroiComentario(ResultSet rs) {
         try {
             return new Comentario(
+                    rs.getInt("id_comentario"),
                     rs.getString("login"),
                     rs.getInt("id_topico"),
                     rs.getString("comentario")
