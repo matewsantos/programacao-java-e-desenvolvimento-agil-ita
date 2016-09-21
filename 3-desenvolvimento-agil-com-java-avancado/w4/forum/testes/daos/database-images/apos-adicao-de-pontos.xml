@@ -1,0 +1,12 @@
+<dataset>
+    <usuario nome="Luigi" email="luigi@naointendo.com" login="luigi" senha="marioverde" pontos="10" />
+    <usuario nome="It's me, Mario!" email="mario@nintendo.com" login="mario" senha="mario" pontos="18" />
+    <usuario nome="Peach" email="peach@nintendo.com" login="peach" senha="socorro" pontos="6" />
+
+    <topico login="mario" titulo="Corrida?" conteudo="Quem está com ânimo para uma corrida no Mario Kart?" />
+    <topico login="luigi" titulo="Mario Verde uma ova!!!" conteudo="O próximo que me chamar de Mario Verde, está ferrado!" />
+
+    <comentario id_comentario="1" login="peach" comentario="Bora!" id_topico="1" />
+    <comentario id_comentario="2" login="mario" comentario="Mario Verde!" id_topico="2" />
+    <comentario id_comentario="3" login="peach" comentario="coitado =(" id_topico="2" />
+</dataset>

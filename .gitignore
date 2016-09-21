@@ -13,5 +13,6 @@ manifest.mf
 MANIFEST.MF
 
 **/libs/**
+**/lib/**
 **/out/**
 *.iml
