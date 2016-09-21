@@ -1,5 +1,7 @@
 package dominio.entidades;
 
+import java.util.Objects;
+
 public class Comentario {
     private int id;
     private String login;
@@ -17,6 +19,22 @@ public class Comentario {
         this.login = login;
         this.idTopico = idTopico;
         this.comentario = comentario;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Comentario that = (Comentario) o;
+        return getId() == that.getId() &&
+                getIdTopico() == that.getIdTopico() &&
+                Objects.equals(getLogin(), that.getLogin()) &&
+                Objects.equals(getComentario(), that.getComentario());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getLogin(), getIdTopico(), getComentario());
     }
 
     public int getId() {
