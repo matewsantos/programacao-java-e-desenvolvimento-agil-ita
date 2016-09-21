@@ -4,6 +4,7 @@ import daos.ComentarioDao;
 import daos.IComentarioDao;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Topico {
     private int id;
@@ -28,9 +29,24 @@ public class Topico {
         this.comentarioDao = new ComentarioDao();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Topico topico = (Topico) o;
+        return getId() == topico.getId() &&
+                Objects.equals(getLogin(), topico.getLogin()) &&
+                Objects.equals(getTitulo(), topico.getTitulo()) &&
+                Objects.equals(getConteudo(), topico.getConteudo());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getLogin(), getTitulo(), getConteudo(), comentarioDao);
+    }
+
     public List<Comentario> getComentarios() {
         return comentarioDao.recuperaPorIdTopico(id);
-//        return new UsuarioDao().ranking();
     }
 
     public int getId() {

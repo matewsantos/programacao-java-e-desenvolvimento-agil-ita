@@ -25,3 +25,4 @@ insert into comentario (login, comentario, id_topico)
 insert into comentario (login, comentario, id_topico)
     values ('mario', 'Não fica bravo, Mario Verde!', 2)
 ;
+
